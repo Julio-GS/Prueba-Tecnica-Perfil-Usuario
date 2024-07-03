@@ -1,0 +1,123 @@
+.section {
+  padding: 1rem;
+  background-color: #1a1a1a; /* Tema oscuro */
+  color: #ffffff;
+  border-radius: 8px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input,
+.textarea {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 97%;
+  padding: 0.75rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(97, 218, 251, 0.5);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  color: #1a1a1a;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: #b447f3;
+  transform: translateY(-2px);
+}
+
+.label {
+  position: relative;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.label .placeholder {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #aaa;
+  transition: all 0.3s ease;
+}
+
+.input:focus + .placeholder,
+.input:not(:placeholder-shown) + .placeholder,
+.textarea:focus + .placeholder,
+.textarea:not(:placeholder-shown) + .placeholder {
+  top: -10px;
+  left: 10px;
+  font-size: 0.75rem;
+  color: var(--primary-color);
+  background-color: #1a1a1a;
+  padding: 0 5px;
+}
+
+/* Estilos para el mensaje de éxito */
+.successMessage {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #28a745;
+  color: #ffffff;
+  border-radius: 4px;
+  text-align: center;
+  animation: fadeInOut 3s ease;
+}
+
+/* Animación para mostrar y ocultar el mensaje de éxito */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  10%,
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
