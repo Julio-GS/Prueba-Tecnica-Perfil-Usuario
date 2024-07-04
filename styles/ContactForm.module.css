@@ -1,6 +1,6 @@
 .section {
   padding: 1rem;
-  background-color: #1a1a1a; /* Tema oscuro */
+  background-color: #1a1a1a;
   color: #ffffff;
   border-radius: 8px;
   max-width: 100%;
@@ -94,30 +94,50 @@
   padding: 0 5px;
 }
 
-/* Estilos para el mensaje de éxito */
-.successMessage {
-  margin-top: 1rem;
-  padding: 1rem;
-  background-color: #28a745;
-  color: #ffffff;
-  border-radius: 4px;
-  text-align: center;
-  animation: fadeInOut 3s ease;
+@media (max-width: 599px) {
+  .section {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .input,
+  .textarea {
+    width: calc(100% - 1rem);
+    padding: 0.5rem;
+  }
 }
 
-/* Animación para mostrar y ocultar el mensaje de éxito */
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
+@media (min-width: 600px) and (max-width: 899px) {
+  .section {
+    padding: 0.75rem;
   }
-  10%,
-  90% {
-    opacity: 1;
-    transform: translateY(0);
+
+  .title {
+    font-size: 1.4rem;
   }
-  100% {
-    opacity: 0;
-    transform: translateY(-20px);
+
+  .input,
+  .textarea {
+    width: calc(100% - 1.3rem);
+    padding: 0.65rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .section {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .input,
+  .textarea {
+    width: calc(100% - 1.5rem);
+    padding: 0.75rem;
   }
 }

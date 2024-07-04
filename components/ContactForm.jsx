@@ -19,6 +19,38 @@ export const ContactForm = () => {
       email: "",
       mensaje: "",
     });
+    if (
+      form.nombre === "" ||
+      form.apellido === "" ||
+      form.email === "" ||
+      form.mensaje === ""
+    ) {
+      toast.error("Por favor, complete todos los campos", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return;
+    }
+    if (
+      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(form.email) ===
+      false
+    ) {
+      toast.error("Por favor, ingrese un email válido", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return;
+    }
     toast.success("Mensaje enviado correctamente", {
       position: "top-center",
       autoClose: 2000,
@@ -44,7 +76,7 @@ export const ContactForm = () => {
             id="first_name"
             placeholder=" "
             className={styles.input}
-            onChange={(e) => setForm(e.target.value)}
+            onChange={(e) => setForm({ ...form, nombre: e.target.value })}
             value={form.nombre}
             required
           />
@@ -56,8 +88,8 @@ export const ContactForm = () => {
             name="Apellido"
             id="last_name"
             className={styles.input}
-            placeholder=" "
-            onChange={(e) => setForm(e.target.value)}
+            placeholder=""
+            onChange={(e) => setForm({ ...form, apellido: e.target.value })}
             value={form.apellido}
             required
           />
@@ -70,7 +102,7 @@ export const ContactForm = () => {
             id="email"
             className={styles.input}
             placeholder=" "
-            onChange={(e) => setForm(e.target.value)}
+            onChange={(e) => setForm({ ...form, email: e.target.value })}
             value={form.email}
             required
           />
@@ -79,11 +111,11 @@ export const ContactForm = () => {
         <div className={styles.label}>
           <textarea
             id="message"
-            name="message"
+            name="Mensaje"
             rows="4"
             className={styles.textarea}
             placeholder=" "
-            onChange={(e) => setForm(e.target.value)}
+            onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
             value={form.mensaje}
             required
           ></textarea>

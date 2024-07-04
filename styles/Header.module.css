@@ -31,3 +31,69 @@
   font-size: medium;
   color: #6b7280;
 }
+
+@media (max-width: 599px) {
+  .header {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+  }
+
+  .profile {
+    flex-direction: column;
+    align-items: flex-center;
+  }
+
+  .profileImage {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profileInfo {
+    padding: 5px;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .infoContact {
+    flex-direction: column;
+    gap: 5px;
+    font-size: small;
+  }
+}
+
+/* Media queries para tabletas */
+@media (min-width: 600px) {
+  .profileImage {
+    width: 250px;
+    height: 250px;
+  }
+
+  .profileInfo h2 {
+    font-size: 24px;
+  }
+
+  .infoContact {
+    font-size: 18px;
+  }
+}
+
+/* Media queries para escritorios */
+@media (min-width: 900px) {
+  .profileImage {
+    width: 200px;
+    height: 200px;
+  }
+
+  .profileInfo h2 {
+    font-size: 24px;
+  }
+
+  .infoContact {
+    font-size: 16px;
+  }
+
+  .profile {
+    flex-basis: 50%;
+  }
+}
